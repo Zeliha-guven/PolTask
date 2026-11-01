@@ -1,0 +1,22 @@
+# Yalnızca araç yapılandırması (ruff + pytest). Paket tanımı değildir.
+
+[tool.ruff]
+target-version = "py312"
+line-length = 120
+# legacy — spec 0001 replaces these; remove from exclude then
+extend-exclude = [
+    "app.py",
+    "db.py",
+    "importer.py",
+    "exporter.py",
+    "web/node_modules",
+]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = [
+    "integration: api/storage/integrations testleri (tam profil; hızlı profil -m 'not integration' çalıştırır)",
+]
