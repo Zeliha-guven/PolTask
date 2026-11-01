@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PolTask</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%230f766e'/><path d='M9 17l5 5 9-11' stroke='white' stroke-width='3.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>">
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand"><span class="logo">✓</span><div><b>PolTask</b><small>Linktera iş takibi</small></div></div>
+    <nav>
+      <a href="#/ozet" data-view="ozet"><span class="ico">▦</span>Özet</a>
+      <a href="#/liste" data-view="liste"><span class="ico">☰</span>Liste</a>
+      <a href="#/pano" data-view="pano"><span class="ico">▥</span>Pano</a>
+      <a href="#/karsilastirma" data-view="karsilastirma"><span class="ico">⇄</span>Karşılaştırma</a>
+      <a href="#/aktarim" data-view="aktarim"><span class="ico">⇅</span>İçe / Dışa Aktar</a>
+    </nav>
+    <div class="sidebar-foot">
+      <button id="themeBtn" class="ghost small" title="Tema değiştir">◐ Tema</button>
+    </div>
+  </aside>
+
+  <div class="main">
+    <header class="topbar">
+      <h1 id="viewTitle">Özet</h1>
+      <div class="topbar-right">
+        <input id="search" type="search" placeholder="Ara: konu, açıklama, OPM no…" autocomplete="off">
+        <button id="newBtn" class="primary">+ Yeni İş</button>
+      </div>
+    </header>
+    <section id="view" class="view"></section>
+  </div>
+
+  <div id="drawerBackdrop" class="backdrop" hidden></div>
+  <aside id="drawer" class="drawer" hidden></aside>
+  <div id="toast" class="toast" hidden></div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
