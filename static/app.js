@@ -488,7 +488,11 @@ function livePivot() {
 }
 
 async function renderKarsilastirma(el) {
-  if (!state.snapshots) state.snapshots = await api("GET", "/api/snapshots");
+  if (!state.snapshots) {
+    // BR-6: haftalık snapshot açık bir istekle alınır (GET artık veri yazmaz — spec 0001 CB-7)
+    await api("POST", "/api/snapshots/haftalik");
+    state.snapshots = await api("GET", "/api/snapshots");
+  }
   const snaps = state.snapshots;
   const options = [...snaps.map(s => ({ id: String(s.id), label: `${fmtDate(s.tarih.slice(0, 10))} — ${s.etiket || ""}`, pivot: s.pivot })),
                    { id: "live", label: "Şu an (canlı)", pivot: livePivot() }];

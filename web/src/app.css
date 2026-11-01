@@ -1,0 +1,60 @@
+/* Küçük ek stiller; geri kalanı Mantine. */
+.pt-table td,
+.pt-table th {
+  white-space: nowrap;
+}
+.pt-table td.wrap {
+  white-space: normal;
+  min-width: 280px;
+  max-width: 520px;
+}
+.pt-clickable {
+  cursor: pointer;
+}
+.pt-clamp {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.pt-late {
+  color: var(--mantine-color-red-text);
+  font-weight: 600;
+}
+.pt-board {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  overflow-x: auto;
+  padding-bottom: 8px;
+}
+.pt-col {
+  flex: 1 0 240px;
+  max-width: 320px;
+  background: var(--mantine-color-default-hover);
+  border-radius: var(--mantine-radius-md);
+  padding: 8px;
+  min-height: 200px;
+}
+.pt-col.over {
+  outline: 2px dashed var(--mantine-color-brand-filled);
+}
+.pt-col.collapsed {
+  flex: 0 0 64px;
+}
+.pt-card[draggable='true'] {
+  cursor: grab;
+}
+.pt-card:focus-visible {
+  outline: 2px solid var(--mantine-color-brand-filled);
+}
+.pt-delta-up {
+  color: var(--mantine-color-red-text);
+  font-size: 11px;
+  margin-left: 4px;
+}
+.pt-delta-down {
+  color: var(--mantine-color-green-text);
+  font-size: 11px;
+  margin-left: 4px;
+}

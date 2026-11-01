@@ -1,0 +1,161 @@
+{
+  "alanlar": [
+    {
+      "anahtar": "ana_baslik",
+      "baslik": "ANA BAŞLIK",
+      "etiket": "Ana Başlık",
+      "tip": "text"
+    },
+    {
+      "anahtar": "konu",
+      "baslik": "KONU",
+      "etiket": "Konu",
+      "tip": "textarea"
+    },
+    {
+      "anahtar": "sozlesme",
+      "baslik": "Sözleşme Kapsamına Dahil/Dahil değil",
+      "etiket": "Sözleşme Kapsamı",
+      "tip": "text"
+    },
+    {
+      "anahtar": "kapsam_tipi",
+      "baslik": "Kapsam Tipi",
+      "etiket": "Kapsam Tipi",
+      "tip": "text"
+    },
+    {
+      "anahtar": "ltr_yorum",
+      "baslik": "LTR Yorum",
+      "etiket": "LTR Yorum",
+      "tip": "textarea"
+    },
+    {
+      "anahtar": "aciklama",
+      "baslik": "Açıklama",
+      "etiket": "Açıklama",
+      "tip": "textarea"
+    },
+    {
+      "anahtar": "yuzde",
+      "baslik": "Tamamlanma Yüzdesi",
+      "etiket": "Tamamlanma %",
+      "max": 100,
+      "min": 0,
+      "tip": "int"
+    },
+    {
+      "anahtar": "durum",
+      "baslik": "Tamamlanma Durumu ",
+      "etiket": "Tamamlanma Durumu",
+      "tip": "text"
+    },
+    {
+      "anahtar": "opm_talep_tarihi",
+      "baslik": "OPM Talep Tarihi",
+      "etiket": "OPM Talep Tarihi",
+      "tip": "date"
+    },
+    {
+      "anahtar": "ilk_hedef_tarih",
+      "baslik": "İlk Verilen Hedef Teslim Tarihi(Linktera)",
+      "etiket": "İlk Verilen Hedef Teslim",
+      "tip": "date"
+    },
+    {
+      "anahtar": "hedef_tarih",
+      "baslik": "Hedef Teslim Tarihi(Linktera)",
+      "etiket": "Hedef Teslim (Linktera)",
+      "tip": "date"
+    },
+    {
+      "anahtar": "uat_hedef",
+      "baslik": "UAT Hedefi(TurkOnay)",
+      "etiket": "UAT Hedefi (TurkOnay)",
+      "tip": "date"
+    },
+    {
+      "anahtar": "bitis_tarihi",
+      "baslik": "Bitiş Tarihi ",
+      "etiket": "Bitiş Tarihi",
+      "tip": "date"
+    },
+    {
+      "anahtar": "yayginlastirma_tarihi",
+      "baslik": "Yaygınlaştırma Tarihi",
+      "etiket": "Yaygınlaştırma Tarihi",
+      "tip": "date"
+    },
+    {
+      "anahtar": "cr_no",
+      "baslik": "CR NUMARASI",
+      "etiket": "CR Numarası",
+      "tip": "text"
+    },
+    {
+      "anahtar": "talep_sorumlusu",
+      "baslik": "TALEP SORUMLUSU",
+      "etiket": "Talep Sorumlusu",
+      "tip": "text"
+    },
+    {
+      "anahtar": "linktera_sorumlusu",
+      "baslik": "LİNKTERA SORUMLUSU",
+      "etiket": "Linktera Sorumlusu",
+      "tip": "text"
+    },
+    {
+      "anahtar": "kimde_bekliyor",
+      "baslik": "Kimde Bekliyor?",
+      "etiket": "Kimde Bekliyor?",
+      "tip": "text"
+    },
+    {
+      "anahtar": "oncelik",
+      "baslik": "Öncelik",
+      "etiket": "Öncelik",
+      "max": 3,
+      "min": 1,
+      "tip": "int"
+    },
+    {
+      "anahtar": "icerik_tarihce",
+      "baslik": "İçerik Detayı-Tarihçe",
+      "etiket": "İçerik Detayı-Tarihçe",
+      "tip": "text"
+    },
+    {
+      "anahtar": "opm_no",
+      "baslik": "OPM NO",
+      "etiket": "OPM No",
+      "tip": "text"
+    }
+  ],
+  "durumlar": [
+    "Başlamadı",
+    "Beklemede",
+    "Geliştirmede",
+    "Testte",
+    "Tamamlandı",
+    "İptal"
+  ],
+  "is_sayisi": 0,
+  "kapali_durumlar": [
+    "Tamamlandı",
+    "İptal"
+  ],
+  "kapsam_tipleri": [
+    "Ana Kapsam",
+    "Bug fix",
+    "Ek İstek",
+    "Kapsam İçi Değişiklik"
+  ],
+  "opm_sayisi": 0,
+  "son_ice_aktarim": null,
+  "son_opm_aktarim": null,
+  "sozlesme_degerleri": [
+    "Dahil",
+    "Dahil değil"
+  ],
+  "varsayilan_durum": "Başlamadı"
+}

@@ -1,22 +1,23 @@
-"""Veritabanını orijinal Excel formatında dışa aktarır."""
+"""Veriyi orijinal Excel formatında yazar ("Güncel Durum" + "Linktera_Tüm_İşler")."""
 import io
 from datetime import datetime
 
 from openpyxl import Workbook
 from openpyxl.styles import Alignment, Border, Font, PatternFill, Side
 
-from db import DURUMLAR, FIELDS, compute_pivot
+from poltask.domain.fields import DURUMLAR, FIELDS
 
 HEADER_FILL = PatternFill("solid", fgColor="DDEBF7")
 BOLD = Font(bold=True)
 THIN = Side(style="thin", color="BFBFBF")
 BORDER = Border(left=THIN, right=THIN, top=THIN, bottom=THIN)
+WIDTHS = {"ANA BAŞLIK": 30, "KONU": 50, "Açıklama": 50, "LTR Yorum": 30, "İçerik Detayı-Tarihçe": 50}
 
 
-def comments_text(conn):
+def comments_text(comments):
     """Görev başına yorumları 'İçerik Detayı-Tarihçe' kolonu için tek metne çevirir (eskiden yeniye)."""
     out = {}
-    for c in conn.execute("SELECT task_id, metin, zaman, ice_aktarim FROM comments ORDER BY zaman, id"):
+    for c in comments:
         line = c["metin"]
         if not c["ice_aktarim"]:
             line = f"[{datetime.strptime(c['zaman'][:10], '%Y-%m-%d').strftime('%d.%m.%Y')}] {line}"
@@ -50,34 +51,34 @@ def write_pivot(ws, pivot):
     ws.column_dimensions["B"].width = 24
 
 
-def export_workbook(conn):
+def build_workbook(pivot, tasks, comments):
+    """pivot: Kapsam × Durum; tasks: sıralı iş satırları; comments: comments_for_export satırları → BytesIO."""
     wb = Workbook()
-    write_pivot(wb.active, compute_pivot(conn))
+    write_pivot(wb.active, pivot)
     wb.active.title = "Güncel Durum"
 
     ws = wb.create_sheet("Linktera_Tüm_İşler")
-    for j, (_, header, _) in enumerate(FIELDS, start=1):
-        cell = ws.cell(row=1, column=j, value=header)
+    for j, f in enumerate(FIELDS, start=1):
+        cell = ws.cell(row=1, column=j, value=f.header)
         cell.font, cell.fill = BOLD, HEADER_FILL
         cell.alignment = Alignment(wrap_text=True, vertical="center")
-    tarihce = comments_text(conn)
-    for i, t in enumerate(conn.execute("SELECT * FROM tasks ORDER BY sira, id"), start=2):
-        for j, (key, _, typ) in enumerate(FIELDS, start=1):
-            v = t[key]
-            if key == "icerik_tarihce":
+    tarihce = comments_text(comments)
+    for i, t in enumerate(tasks, start=2):
+        for j, f in enumerate(FIELDS, start=1):
+            v = t[f.key]
+            if f.key == "icerik_tarihce":
                 v = tarihce.get(t["id"])
-            elif key == "yuzde" and v is not None:
+            elif f.key == "yuzde" and v is not None:
                 v = v / 100
-            elif typ == "date" and v:
+            elif f.type == "date" and v:
                 v = datetime.strptime(v, "%Y-%m-%d")
             cell = ws.cell(row=i, column=j, value=v)
-            if key == "yuzde":
+            if f.key == "yuzde":
                 cell.number_format = "0%"
-            elif typ == "date":
+            elif f.type == "date":
                 cell.number_format = "dd.mm.yyyy"
-    widths = {"ANA BAŞLIK": 30, "KONU": 50, "Açıklama": 50, "LTR Yorum": 30, "İçerik Detayı-Tarihçe": 50}
-    for j, (_, header, _) in enumerate(FIELDS, start=1):
-        ws.column_dimensions[ws.cell(row=1, column=j).column_letter].width = widths.get(header, 16)
+    for j, f in enumerate(FIELDS, start=1):
+        ws.column_dimensions[ws.cell(row=1, column=j).column_letter].width = WIDTHS.get(f.header, 16)
     ws.freeze_panes = "C2"
     ws.auto_filter.ref = ws.dimensions
 

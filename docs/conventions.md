@@ -28,10 +28,10 @@
 | SQLite | Python stdlib `sqlite3` | — |
 | pytest | 9.2.0 | `requirements-dev.txt` |
 | ruff | 0.17.3 | `requirements-dev.txt` |
-| Node.js | ≥ 20 (spec 0001 kesinleştirir) | `scripts/check.conf` `requires` (planlı) |
-| React, TypeScript, Vite, Mantine, Vitest, React Testing Library | spec 0001'de sabitlenir | `web/package.json` + commit edilen `web/package-lock.json` |
+| Node.js | ≥ 20 (spec 0002 kesinleştirir) | `scripts/check.conf` `requires` (planlı) |
+| React, TypeScript, Vite, Mantine, Vitest, React Testing Library | spec 0002'de sabitlenir | `web/package.json` + commit edilen `web/package-lock.json` |
 
-Sürümler tam (`==`, lockfile) sabitlenir; aralık yok. Chart.js CDN'i spec 0001 ile kalkar.
+Sürümler tam (`==`, lockfile) sabitlenir; aralık yok. Chart.js CDN'i spec 0002 ile kalkar.
 
 ## Naming
 
@@ -83,13 +83,16 @@ Sürümler tam (`==`, lockfile) sabitlenir; aralık yok. Chart.js CDN'i spec 000
   ile çalıştır — from bootstrap 2026-11-01
 - Tarihçe özeti başlıklarında yıl yok (`"23 Eylül"`) — yıl varsayımı açık bir parametre olmalı, sessizce
   "bu yıl" kabul edilmez — from bootstrap 2026-11-01
+- openpyxl ValueError mesajı dosya yolunu içerir — kullanıcıya iletme, genel Türkçe 400'e çevir — from review
+  0001 round 1
 
 ## Enforced by tooling
 <!-- List what the compiler/linter/analyzers already enforce, so review doesn't re-litigate it.
 Wire new rules into `scripts/check` whenever possible — prose is advice, tooling is law. -->
 - **ruff** (`pyproject.toml`, kurallar `E`, `F`, `I`, `B`; satır uzunluğu 120; hedef py312) —
-  `scripts/check` `lint` adımı. Eski dört dosya (`app.py`, `db.py`, `importer.py`, `exporter.py`)
-  spec 0001 onları değiştirene kadar hariç tutulur.
+  `scripts/check` `lint` adımı. Tüm Python kodu kapsamdadır (yalnızca `.claude/` ve `web/node_modules`
+  hariç).
 - **compileall** — Python sözdizimi, `compile` adımı.
-- **TypeScript strict** — spec 0001 ile (`web-lint/typecheck` adımı, şimdilik planlı).
-- Mimari sınırlar (`docs/architecture.md`) — spec 0001 ile pytest mimari testi.
+- **TypeScript strict** — spec 0002 ile (`web-lint/typecheck` adımı, şimdilik planlı).
+- Mimari sınırlar (`docs/architecture.md`) — pytest mimari testi (`tests/unit/test_architecture.py`,
+  `test-unit` adımı).

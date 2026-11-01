@@ -24,7 +24,7 @@
   "Forbidden dependencies" maddelerini import analiziyle doğrular.
 - Adlandırma: `test_<konu>.py`, `test_<davranış>`; iş kuralı testleri kuralı adında taşır (`test_br3_...`).
 
-**Frontend — Vitest + React Testing Library (jsdom)** (spec 0001 ile):
+**Frontend — Vitest + React Testing Library (jsdom)** (spec 0002 ile):
 - Bileşen testleri bileşenin yanında: `web/src/**/<Bileşen>.test.tsx`.
 - UI durumlarını (boş / yükleniyor / hata / başarılı) bileşen testleri kanıtlar; `web/src/api` testlerde
   stub'lanır.
@@ -37,6 +37,11 @@
 - `TZ=Europe/Istanbul`, yerel ayar `tr` (test komutlarında/kurulumda sabitlenir).
 - Mantine animasyon/geçişleri testlerde kapalıdır (tema/provider düzeyinde reduced motion, geçiş süresi 0).
 - Rastgelelik kullanılmaz; kullanılırsa tohum sabitlenir.
+
+**Gerçek veri koruması:** testler `data/poltask.db`'yi asla açmaz (storage pytest altında reddeder) ve
+oturum başında/sonunda dosyanın parmak izi karşılaştırılır. Bu yüzden `./scripts/check`'i **uygulama
+kapalıyken** çalıştırın; açık uygulamanın kendi yazması parmak izini değiştirip oturumu kırmızı bitirebilir
+(spec 0001 review round 1, I-1).
 
 ## What must be tested
 <!-- e.g. every business rule (BR-n), every boundary/forbidden dependency; the e2e journeys and

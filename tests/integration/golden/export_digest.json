@@ -1,0 +1,588 @@
+[
+ {
+  "sheet": "Güncel Durum",
+  "cells": [
+   [
+    "B2",
+    "Say Tamamlanma Durumu ",
+    "General",
+    false,
+    null
+   ],
+   [
+    "C2",
+    "Sütun Etiketleri",
+    "General",
+    false,
+    null
+   ],
+   [
+    "B3",
+    "Satır Etiketleri",
+    "General",
+    true,
+    "00DDEBF7"
+   ],
+   [
+    "C3",
+    "Başlamadı",
+    "General",
+    true,
+    "00DDEBF7"
+   ],
+   [
+    "D3",
+    "Geliştirmede",
+    "General",
+    true,
+    "00DDEBF7"
+   ],
+   [
+    "E3",
+    "Testte",
+    "General",
+    true,
+    "00DDEBF7"
+   ],
+   [
+    "F3",
+    "Tamamlandı",
+    "General",
+    true,
+    "00DDEBF7"
+   ],
+   [
+    "G3",
+    "Genel Toplam",
+    "General",
+    true,
+    "00DDEBF7"
+   ],
+   [
+    "B4",
+    "(boş)",
+    "General",
+    false,
+    null
+   ],
+   [
+    "C4",
+    1,
+    "General",
+    false,
+    null
+   ],
+   [
+    "G4",
+    1,
+    "General",
+    false,
+    null
+   ],
+   [
+    "B5",
+    "Ana Kapsam",
+    "General",
+    false,
+    null
+   ],
+   [
+    "D5",
+    1,
+    "General",
+    false,
+    null
+   ],
+   [
+    "G5",
+    1,
+    "General",
+    false,
+    null
+   ],
+   [
+    "B6",
+    "Bug fix",
+    "General",
+    false,
+    null
+   ],
+   [
+    "E6",
+    1,
+    "General",
+    false,
+    null
+   ],
+   [
+    "G6",
+    1,
+    "General",
+    false,
+    null
+   ],
+   [
+    "B7",
+    "Ek İstek",
+    "General",
+    false,
+    null
+   ],
+   [
+    "F7",
+    1,
+    "General",
+    false,
+    null
+   ],
+   [
+    "G7",
+    1,
+    "General",
+    false,
+    null
+   ],
+   [
+    "B8",
+    "Genel Toplam",
+    "General",
+    true,
+    "00DDEBF7"
+   ],
+   [
+    "C8",
+    1,
+    "General",
+    true,
+    "00DDEBF7"
+   ],
+   [
+    "D8",
+    1,
+    "General",
+    true,
+    "00DDEBF7"
+   ],
+   [
+    "E8",
+    1,
+    "General",
+    true,
+    "00DDEBF7"
+   ],
+   [
+    "F8",
+    1,
+    "General",
+    true,
+    "00DDEBF7"
+   ],
+   [
+    "G8",
+    4,
+    "General",
+    true,
+    "00DDEBF7"
+   ]
+  ],
+  "widths": {
+   "B": 24.0
+  },
+  "freeze": null,
+  "filter": null
+ },
+ {
+  "sheet": "Linktera_Tüm_İşler",
+  "cells": [
+   [
+    "A1",
+    "ANA BAŞLIK",
+    "General",
+    true,
+    "00DDEBF7"
+   ],
+   [
+    "B1",
+    "KONU",
+    "General",
+    true,
+    "00DDEBF7"
+   ],
+   [
+    "C1",
+    "Sözleşme Kapsamına Dahil/Dahil değil",
+    "General",
+    true,
+    "00DDEBF7"
+   ],
+   [
+    "D1",
+    "Kapsam Tipi",
+    "General",
+    true,
+    "00DDEBF7"
+   ],
+   [
+    "E1",
+    "LTR Yorum",
+    "General",
+    true,
+    "00DDEBF7"
+   ],
+   [
+    "F1",
+    "Açıklama",
+    "General",
+    true,
+    "00DDEBF7"
+   ],
+   [
+    "G1",
+    "Tamamlanma Yüzdesi",
+    "General",
+    true,
+    "00DDEBF7"
+   ],
+   [
+    "H1",
+    "Tamamlanma Durumu ",
+    "General",
+    true,
+    "00DDEBF7"
+   ],
+   [
+    "I1",
+    "OPM Talep Tarihi",
+    "General",
+    true,
+    "00DDEBF7"
+   ],
+   [
+    "J1",
+    "İlk Verilen Hedef Teslim Tarihi(Linktera)",
+    "General",
+    true,
+    "00DDEBF7"
+   ],
+   [
+    "K1",
+    "Hedef Teslim Tarihi(Linktera)",
+    "General",
+    true,
+    "00DDEBF7"
+   ],
+   [
+    "L1",
+    "UAT Hedefi(TurkOnay)",
+    "General",
+    true,
+    "00DDEBF7"
+   ],
+   [
+    "M1",
+    "Bitiş Tarihi ",
+    "General",
+    true,
+    "00DDEBF7"
+   ],
+   [
+    "N1",
+    "Yaygınlaştırma Tarihi",
+    "General",
+    true,
+    "00DDEBF7"
+   ],
+   [
+    "O1",
+    "CR NUMARASI",
+    "General",
+    true,
+    "00DDEBF7"
+   ],
+   [
+    "P1",
+    "TALEP SORUMLUSU",
+    "General",
+    true,
+    "00DDEBF7"
+   ],
+   [
+    "Q1",
+    "LİNKTERA SORUMLUSU",
+    "General",
+    true,
+    "00DDEBF7"
+   ],
+   [
+    "R1",
+    "Kimde Bekliyor?",
+    "General",
+    true,
+    "00DDEBF7"
+   ],
+   [
+    "S1",
+    "Öncelik",
+    "General",
+    true,
+    "00DDEBF7"
+   ],
+   [
+    "T1",
+    "İçerik Detayı-Tarihçe",
+    "General",
+    true,
+    "00DDEBF7"
+   ],
+   [
+    "U1",
+    "OPM NO",
+    "General",
+    true,
+    "00DDEBF7"
+   ],
+   [
+    "A2",
+    "Ödeme",
+    "General",
+    false,
+    null
+   ],
+   [
+    "B2",
+    "Kart ile ödeme",
+    "General",
+    false,
+    null
+   ],
+   [
+    "C2",
+    "Dahil",
+    "General",
+    false,
+    null
+   ],
+   [
+    "D2",
+    "Ana Kapsam",
+    "General",
+    false,
+    null
+   ],
+   [
+    "G2",
+    0.5,
+    "0%",
+    false,
+    null
+   ],
+   [
+    "H2",
+    "Geliştirmede",
+    "General",
+    false,
+    null
+   ],
+   [
+    "I2",
+    "2026-09-01T00:00:00",
+    "dd.mm.yyyy",
+    false,
+    null
+   ],
+   [
+    "K2",
+    "2026-12-01T00:00:00",
+    "dd.mm.yyyy",
+    false,
+    null
+   ],
+   [
+    "P2",
+    "Zeliha",
+    "General",
+    false,
+    null
+   ],
+   [
+    "R2",
+    "Linktera",
+    "General",
+    false,
+    null
+   ],
+   [
+    "S2",
+    1,
+    "General",
+    false,
+    null
+   ],
+   [
+    "T2",
+    "23.09 görüşüldü",
+    "General",
+    false,
+    null
+   ],
+   [
+    "U2",
+    "#LTR100",
+    "General",
+    false,
+    null
+   ],
+   [
+    "A3",
+    "Rapor",
+    "General",
+    false,
+    null
+   ],
+   [
+    "B3",
+    "Aylık rapor\nikinci satır",
+    "General",
+    false,
+    null
+   ],
+   [
+    "C3",
+    "Dahil değil",
+    "General",
+    false,
+    null
+   ],
+   [
+    "D3",
+    "Ek İstek",
+    "General",
+    false,
+    null
+   ],
+   [
+    "G3",
+    1,
+    "0%",
+    false,
+    null
+   ],
+   [
+    "H3",
+    "Tamamlandı",
+    "General",
+    false,
+    null
+   ],
+   [
+    "M3",
+    "2026-10-15T00:00:00",
+    "dd.mm.yyyy",
+    false,
+    null
+   ],
+   [
+    "S3",
+    2,
+    "General",
+    false,
+    null
+   ],
+   [
+    "U3",
+    "LTR200",
+    "General",
+    false,
+    null
+   ],
+   [
+    "B4",
+    "Bağımsız iş",
+    "General",
+    false,
+    null
+   ],
+   [
+    "H4",
+    "Başlamadı",
+    "General",
+    false,
+    null
+   ],
+   [
+    "B5",
+    "Yeni iş",
+    "General",
+    false,
+    null
+   ],
+   [
+    "C5",
+    "Dahil",
+    "General",
+    false,
+    null
+   ],
+   [
+    "D5",
+    "Bug fix",
+    "General",
+    false,
+    null
+   ],
+   [
+    "G5",
+    0.3,
+    "0%",
+    false,
+    null
+   ],
+   [
+    "H5",
+    "Testte",
+    "General",
+    false,
+    null
+   ],
+   [
+    "K5",
+    "2026-12-31T00:00:00",
+    "dd.mm.yyyy",
+    false,
+    null
+   ],
+   [
+    "T5",
+    "[05.11.2026] elle not",
+    "General",
+    false,
+    null
+   ]
+  ],
+  "widths": {
+   "A": 30.0,
+   "B": 50.0,
+   "C": 16.0,
+   "D": 16.0,
+   "E": 30.0,
+   "F": 50.0,
+   "G": 16.0,
+   "H": 16.0,
+   "I": 16.0,
+   "J": 16.0,
+   "K": 16.0,
+   "L": 16.0,
+   "M": 16.0,
+   "N": 16.0,
+   "O": 16.0,
+   "P": 16.0,
+   "Q": 16.0,
+   "R": 16.0,
+   "S": 16.0,
+   "T": 50.0,
+   "U": 16.0
+  },
+  "freeze": "C2",
+  "filter": "A1:U5"
+ }
+]

@@ -6,7 +6,7 @@ içe/dışa aktarım formatı. Python 3.12 + Flask + SQLite; arayüz React + Typ
 
 ## Operating mode
 
-**Mode: strict** — set at bootstrap 2026-11-01 (`workflows/README.md`); every workflow honors its gates.
+**Mode: lite** — strict at bootstrap 2026-11-01, lite from 2026-11-01 (human: speed) (`workflows/README.md`); every workflow honors its gates.
 **Start work** with `/new-feature` in lite (it chains the segments and asks at each gate) or with
 `/analyze` in strict (one segment per role). Segment commands always stop (`workflows/segments.md`).
 **Language: chat=tr · docs=tr** — set at bootstrap; protocol fields stay English (`docs/conventions.md`).

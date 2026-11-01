@@ -11,11 +11,12 @@ kullanıcılı kullanıma (backlog B-1) geçişi ucuz tutmak için bugünden çi
 Arayüz React + TypeScript + Vite + Mantine ile yazılır, statik varlıklara derlenir ve Flask tarafından
 sunulur; tek çalıştırma komutu korunur (ADR [0001](decisions/0001-frontend-react-typescript-mantine.md)).
 
-**Bugünkü durum (geçiş):** kod hâlâ eski yapıdadır — `app.py` (Flask REST + doğrulama) → `importer.py` /
-`exporter.py` → `db.py` (yaprak); arayüz `static/` altında vanilla JS (innerHTML şablonları) + CDN'den
-Chart.js. Alan listeleri/durumlar/pivot Python ve JS'de ikilenmiştir. Spec 0001 bu yapıyı aşağıdaki
-modüllere taşır; o zamana kadar eski dosyalar ruff ve mimari testlerin dışındadır
-(`pyproject.toml`, "legacy").
+**Bugünkü durum (geçiş):** sunucu tarafı spec 0001 ile `poltask/` paketine taşındı —
+`poltask/domain`, `poltask/storage`, `poltask/integrations`, `poltask/api`; kökteki `app.py` (sunucu) ve
+`importer.py` (komut satırından içe aktarım) yalnızca giriş noktalarıdır. Eski arayüz (`static/`, vanilla JS
+innerHTML şablonları + CDN'den Chart.js, kendi alan/durum kopyalarıyla) yalnızca geri dönüş yoludur. Yeni arayüz
+spec 0002 ile `web/` altında yazıldı ve `/`'dan sunulur (`web/dist`); eski arayüz geri dönüş yolu olarak
+`/eski`'de durur, kaldırılması backlog B-5.
 
 ## Modules / components and ownership
 
@@ -41,8 +42,8 @@ modüllere taşır; o zamana kadar eski dosyalar ruff ve mimari testlerin dış�
 
 ## Forbidden dependencies (make them testable)
 
-Backend'de bir pytest mimari testi (`tests/unit/test_architecture.py`, spec 0001 ile), frontend'de bir
-lint kuralı veya test bunları doğrular:
+Backend'de bir pytest mimari testi (`tests/unit/test_architecture.py`), frontend'de bir
+lint kuralı veya test (spec 0002 ile) bunları doğrular:
 
 - `domain` şunların hiçbirini import etmez: `storage`, `integrations`, `api`, `flask`, `sqlite3`, `openpyxl`.
 - `storage` ve `integrations` asla `api` import etmez.

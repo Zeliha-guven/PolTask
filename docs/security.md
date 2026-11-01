@@ -12,15 +12,15 @@
 - **Tüm API girdileri `api` katmanında doğrulanır**: tip, aralık (`yuzde` 0–100, `oncelik` 1–3), tarih
   biçimi (`YYYY-MM-DD`), izin verilen değerler (Durum, Kapsam Tipi, Sözleşme — BR-5), zorunlu alanlar
   (KONU boş olamaz). Doğrulanmamış veri `storage`'a ulaşmaz.
-- **Dosya yükleme:** yalnızca `.xlsx`; en fazla **20 MB** (Flask `MAX_CONTENT_LENGTH`; aşımda 413 +
+- **Dosya yükleme:** yalnızca Excel (`.xlsx`; bugünkü davranış olarak `.xlsm` uzantısı da kabul edilir); en fazla **20 MB** (Flask `MAX_CONTENT_LENGTH`; aşımda 413 +
   Türkçe `{error}`). Yüklenen dosya geçici dizinde işlenir, iş bitince (hata durumunda da) silinir;
   çalışma kitabı silmeden önce kapatılır (`docs/conventions.md`, Known traps).
 - **Çıktı:** React metni otomatik escape eder; `dangerouslySetInnerHTML` **yasaktır**. (Bugünkü vanilla
-  JS `innerHTML` şablonları spec 0001 ile kalkar.)
+  JS `innerHTML` şablonları spec 0002 ile kalkar.)
 - **Hata mesajları** asla dosya yolu, stack trace, SQL veya iç ayrıntı sızdırmaz
   (`docs/conventions.md`, Error handling).
 - Yan etkisi olan işlemler yalnızca `POST`/`PATCH`/`PUT`/`DELETE` ile yapılır; `GET` veri değiştirmez.
-  (Bugün `GET /api/snapshots`'ın yazma yan etkisi var — bilinen açık, spec 0001 kapatır.)
+  (Haftalık snapshot `POST /api/snapshots/haftalik` ile alınır; spec 0001.)
 
 ## AuthN / AuthZ
 - Sunucu **yalnızca `127.0.0.1`'e** bağlanır. Kimlik doğrulama yoktur — bu bilinçli bir sınırdır:

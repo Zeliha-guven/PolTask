@@ -45,15 +45,14 @@
 - **BR-4:** Excel içe aktarımı tüm veriyi (işler, yorumlar, tarihçe, snapshot'lar) değiştirir ve yalnızca
   kullanıcının açık onayıyla yapılır.
 - **BR-5:** Durum, Kapsam Tipi ve Sözleşme Kapsamı yalnızca tanımlı değerlerden biri olabilir; sunucu
-  doğrular ve geçersiz değeri reddeder. (Bugün bilinen bir açık: sunucu durum/kapsam_tipi doğrulamıyor —
-  yeniden tasarım (spec 0001) bunu zorunlu kılar.)
+  doğrular ve geçersiz değeri reddeder (`api` katmanı, spec 0001). Excel/OPM içe aktarımı değerleri olduğu
+  gibi alır.
 - **BR-6:** Her ISO haftasında en az bir snapshot alınır.
 
 ## Key domain invariants
 
 - Her alan değişikliği tarihçeye yazılır: alan, eski değer, yeni değer, zaman. Tarihçesiz değişiklik yoktur.
-- KONU asla boş değildir — oluşturmada da güncellemede (PATCH) de. (Bugün PATCH KONU'yu boşaltabiliyor —
-  bilinen açık, yeniden tasarımda kapanır.)
+- KONU asla boş değildir — oluşturmada da güncellemede (PATCH) de.
 - Excel dışa aktarımının sütun sırası ve başlıkları kaynak sayfa "Linktera_Tüm_İşler" ile birebir aynıdır;
   dışa aktarılan dosya tekrar içe aktarılabilir.
 - Alan listesi, Durum ve Kapsam Tipi değerleri tek bir yerde (backend `domain`) tanımlıdır
